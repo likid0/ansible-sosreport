@@ -1,0 +1,17 @@
+---
+# Task: Fetch sosreport diagnostics
+
+- name: Fetch sosreport archive md5
+  fetch: >
+    src={{ tmpdir }}/sosreport-{{ inventory_hostname }}.tar.xz.md5
+    dest=/tmp/sos/
+    fail_on_missing=yes
+    flat=yes
+    validate_md5=yes
+
+- name: Fetch sosreport archives
+  fetch: >
+    src={{ tmpdir }}/sosreport-{{ inventory_hostname }}.tar.xz
+    dest={{ diag_path }}/sosreport-{{ inventory_hostname }}.tar.xz
+    flat=yes
+    validate_md5=no

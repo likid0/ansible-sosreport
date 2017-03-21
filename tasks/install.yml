@@ -1,0 +1,8 @@
+---
+# Task:  Install sosreport package
+
+- name: yum install sosreport
+  yum:  
+   name: sos
+   state: present
+   update_cache: yes

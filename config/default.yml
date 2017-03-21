@@ -1,0 +1,29 @@
+---
+
+#
+# Example sosreport playbook configuration options which can be set in `custom.yml` or via the command-line
+#
+
+# sosreport arguments, collect all available logs regardless of size
+#sosreport_args: --all-logs
+
+#sosreport arguments,  Places a global limit on the size (in MB) of any collected set of logs,The limit is applied separately for each set of logs collected by any plugin.
+sosreport_args: --log-size=100
+
+# Prepend PATH to look for sosreport
+#sosreport_path:  /opt/sosreport/bin
+
+# Name of the sosreport executable
+#sosreport_cmd: sosreport-custom-exe
+
+# Default path to put the collected diags (can override from command-line)
+#diag_path: /path/to/local/diags
+
+# Install custom sosreport packages, rather than the OS distro defaults
+custom_sosreport_pkgs: no
+
+# Remote tmp directory to create diag files in (will be deleted, recreated - so be careful)
+tmpdir: /var/tmp/sos-ansible2
+
+# Local path to custom sosreport packages (required if custom_sosreport_pkgs)
+#rpm: pkg/sosreport.rpm
